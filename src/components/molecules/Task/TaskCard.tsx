@@ -23,6 +23,8 @@ const TaskCard = ({ task, isOpen, onToggle }: Props) => {
     return (
         <div className={`bg-white p-3 rounded shadow-md mb-2 cursor-pointer transition ${isOpen ? "border-blue-500" : "border-transparent"
             }`}
+            draggable
+            onDragStart={(e) => e.dataTransfer.setData("text/plain", task.id)}
             onClick={onToggle}>
             <h4 className="text-sm font-semibold text-gray-700">{task.title}</h4>
             <div className="flex justify-between items-center mb-1 mt-4">
