@@ -2,7 +2,13 @@ import { Task } from "@/types/task";
 import { IconCheck, IconDown, IconUp, IconEqual } from "@/components/atoms/Icon/Icon";
 import { ReactNode } from "react";
 
-const TaskCard = ({ task }: { task: Task }) => {
+interface Props {
+    task: Task;
+    isOpen: boolean;
+    onToggle: () => void;
+}
+
+const TaskCard = ({ task, isOpen, onToggle }: Props) => {
     const getPriorityIcon = (priority: string): ReactNode => {
         switch (priority) {
             case "Low":
@@ -15,7 +21,9 @@ const TaskCard = ({ task }: { task: Task }) => {
     };
 
     return (
-        <div className="bg-white p-3 rounded shadow-md mb-2">
+        <div className={`bg-white p-3 rounded shadow-md mb-2 cursor-pointer transition ${isOpen ? "border-blue-500" : "border-transparent"
+            }`}
+            onClick={onToggle}>
             <h4 className="text-sm font-semibold text-gray-700">{task.title}</h4>
             <div className="flex justify-between items-center mb-1 mt-4">
                 <div className="flex gap-1">

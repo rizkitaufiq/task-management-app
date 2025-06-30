@@ -3,9 +3,11 @@
 import { useState, useRef } from "react";
 
 import { Task } from "@/types/task";
-import TaskCard from "@/components/molecules/Task/TaskCard";
 import { useTaskForm } from "@/hooks/useTaskForm";
 import { useClickOutside } from "@/hooks/useClickOutside";
+
+import TaskCard from "@/components/molecules/Task/TaskCard";
+import TaskDetail from "@/components/molecules/Task/TaskDetail";
 
 interface Props {
     titleTask: string;
@@ -18,6 +20,10 @@ export default function TaskColumn({ titleTask, progress, bgColor, tasks }: Prop
     const [open, setOpen] = useState(false);
     const formRef = useRef<HTMLDivElement | null>(null);
     const { title, setTitle, handleCreate } = useTaskForm(progress);
+    const [selectedId, setSelectedId] = useState<string | null>(null);
+
+    const toggleDetail = (id: string) =>
+        setSelectedId((prev) => (prev === id ? null : id));
 
     useClickOutside(formRef, () => setOpen(false));
 
@@ -29,9 +35,14 @@ export default function TaskColumn({ titleTask, progress, bgColor, tasks }: Prop
                 </div>
 
                 {tasks.map((task) => (
-                    <TaskCard key={task.id}
-                        task={task}
-                    />
+                    <div key={task.id}>
+                        <TaskCard
+                            task={task}
+                            isOpen={selectedId === task.id}
+                            onToggle={() => toggleDetail(task.id)}
+                        />
+                        {selectedId === task.id && <TaskDetail task={task} />}
+                    </div>
                 ))}
 
                 {!open && (
@@ -65,6 +76,8 @@ export default function TaskColumn({ titleTask, progress, bgColor, tasks }: Prop
                         </div>
                     </div>
                 )}
+
+
             </div>
         </div>
     );
