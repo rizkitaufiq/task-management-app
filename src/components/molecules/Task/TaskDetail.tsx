@@ -18,7 +18,7 @@ const getPriorityIcon = (priority: string): ReactNode => {
 const TaskDetail = ({ task }: { task: Task }) => (
 
     <div className="bg-white border border-gray-500 rounded p-3 text-sm mb-2 animate-fade">
-        <div className="flex px-2 lg:px-5 mt-3 mb-4 lg:mb-8 gap-1">
+        <div className="flex px-2 lg:px-5 mt-3 mb-4 lg:mb-6 gap-1">
             <IconCheck className="bg-blue-500 text-white" />
             <p className="text-xs text-gray-500">{task.id.toUpperCase()}</p>
         </div>
