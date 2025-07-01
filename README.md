@@ -54,7 +54,7 @@ A simple and responsive task management board built with Next.js, TypeScript, Ta
 
 ✅ Create, Edit (inline), Delete tasks (drag-and-drop to red area)
 
-✅ Drag-and-drop between status columns
+✅ Drag-and-drop between progress columns
 
 ✅ ID auto-generates sequentially (SM-1, SM-2, ...)
 
