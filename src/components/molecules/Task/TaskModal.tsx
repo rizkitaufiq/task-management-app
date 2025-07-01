@@ -12,7 +12,7 @@ interface Props {
 }
 
 export default function TaskModal({ open, onClose, editTask }: Props) {
-    const { addTask, updateTask } = useTaskStore();
+    const { addTask } = useTaskStore();
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
     const [priority, setPriority] = useState<TaskPriority>("Medium");
@@ -38,7 +38,7 @@ export default function TaskModal({ open, onClose, editTask }: Props) {
             priority,
         };
         if (editTask) {
-            updateTask(task);
+            // updateTask(task);
         } else {
             addTask(task);
         }

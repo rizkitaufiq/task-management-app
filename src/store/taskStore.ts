@@ -5,7 +5,7 @@ import { persist } from "zustand/middleware";
 interface TaskState{
     tasks: Task[];
     addTask: (task: Task) => void;
-    updateTask: (task: Task) => void;
+    updateTask: (id: string, updates: Partial<Task>) => void;
     deleteTask: (id: string)  => void;
     moveTask: (id: string, newProgress: Task["progress"]) => void;
 }
@@ -16,9 +16,11 @@ export const useTaskStore = create<TaskState>()(
         tasks: [],
         addTask: (task) => set((state) => ({ tasks: [...state.tasks, task] })),
         
-        updateTask: (updated) =>
+        updateTask: (id: string, updates: Partial<Omit<Task, "id">>) =>
           set((state) => ({
-            tasks: state.tasks.map((t) => (t.id === updated.id ? updated : t)),
+            tasks: state.tasks.map((task) =>
+              task.id === id ? { ...task, ...updates } : task
+            ),
           })),
         
           deleteTask: (id: string) => set((state) => ({
