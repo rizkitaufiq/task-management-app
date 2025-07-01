@@ -1,33 +1,33 @@
-📝 Task Management App
+- # 📝 Task Management App
 
 A simple and responsive task management board built with Next.js, TypeScript, TailwindCSS, and Zustand for state management. It features task creation, editing, drag-and-drop between progress stages, and persistent local storage.
 
 
-🚀 Setup Instructions
+- # 🚀 Setup Instructions
 
--  # Clone the repository :
+-  Clone the repository :
    https://github.com/rizkitaufiq/task-management-app.git
    cd task-manager
 
--  # Install dependencies : 
+-  Install dependencies : 
    npm install
-   # or
+   or
    yarn install 
-   # or
+   or
    pnpm install
 
--  # Run the Development Server :
+-  Run the Development Server :
    npm run dev
-   # or
+   or
    yarn run dev
-   # or
+   or
    pnpm run dev
 
--  # Open in your browser : 
+-  Open in your browser : 
    http://localhost:3000
 
 
-🧩 Tech Stack
+- #  🧩 # Tech Stack
 -  Next.js 15 (App Router, Server Components)
 
 -  TypeScript
@@ -43,14 +43,14 @@ A simple and responsive task management board built with Next.js, TypeScript, Ta
 -  Drag-and-drop interaction 
 
 
-📦 State Management & Storage
+- #  📦 State Management & Storage
 
 -  Zustand was chosen for its simplicity and excellent local state management for mid-scale apps.
 
 -  The entire task list is persisted using localStorage inside the Zustand middleware (persist).
 
 
-💡 Features
+- #  💡 Features
 
 ✅ Create, Edit (inline), Delete tasks (drag-and-drop to red area)
 
@@ -67,7 +67,7 @@ A simple and responsive task management board built with Next.js, TypeScript, Ta
 ✅ Component modularity via Atomic Design
 
 
-⚠️ Known Issues
+- # ⚠️ Known Issues
 Due to time constraints:
 
 ❌ No unit tests or integration tests implemented
@@ -79,7 +79,7 @@ Due to time constraints:
 ❌ No mobile-specific optimization (focused on desktop ≥ 1024px)
 
 
-🔧 Future Improvements
+- # 🔧 Future Improvements
 Given more time, I would:
 
 ✅ Add full drag-to-delete with confirmation modal
