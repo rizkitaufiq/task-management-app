@@ -49,7 +49,10 @@ export default function TaskColumn({ titleTask, progress, bgColor, tasks }: Prop
             onDragOver={handleDragOver}>
             <div className="bg-gray-100 p-4 rounded mb-4">
                 <header className="flex justify-between mb-2 px-8">
-                    <h2 className={`text-sm p-1 opacity-60 ${bgColor}`}>{titleTask}</h2>
+                    <div className="flex gap-2 items-center text-gray-500">
+                        <h2 className={`text-sm p-1 opacity-60 ${bgColor}`}>{titleTask}</h2>
+                        {tasks.length}
+                    </div>
                 </header>
 
                 {tasks.map((task) => (
