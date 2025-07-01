@@ -14,17 +14,19 @@ export default function TaskBoard() {
   };
 
   return (
-    <section>
-      <div className="flex flex-col lg:flex-row justify-center items-center lg:items-baseline gap-6 p-8 lg:min-w-[1024px]">
+    <main>
+      <section className="flex flex-col lg:flex-row justify-center items-center lg:items-baseline gap-6 p-8 lg:min-w-[1024px]">
         <TaskColumn titleTask="TO DO" progress="To Do" bgColor="bg-gray-300" tasks={grouped.todo} />
         <TaskColumn titleTask="IN PROGRESS" progress="In Progress" bgColor="bg-blue-300" tasks={grouped.inProgress} />
         <TaskColumn titleTask="DONE" progress="Done" bgColor="bg-green-300" tasks={grouped.done} />
-      </div>
+      </section>
 
-      <div className="px-8">
-        <DeleteDropZone />
-      </div>
-    </section>
+      <footer className="px-8">
+        <DeleteDropZone>
+          🗑 Drop here to delete task
+        </DeleteDropZone>
+      </footer>
+    </main>
 
   );
 }
