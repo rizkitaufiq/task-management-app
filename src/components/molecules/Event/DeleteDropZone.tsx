@@ -18,7 +18,7 @@ const DeleteDropZone = () => {
         <div
             onDrop={handleDrop}
             onDragOver={(e) => e.preventDefault()}
-            className="w-full text-center p-4 border-2 border-dashed border-red-400 text-red-500 mt-6 rounded hover:bg-red-50 transition"
+            className="bg-red-300 font-bold opacity-50 w-full text-center p-4 border-2 border-dashed border-red-400 text-red-500 mt-6 rounded hover:bg-red-50 transition"
         >
             🗑 Drop here to delete task
         </div>
