@@ -22,7 +22,7 @@ const TaskForm = ({ title, setTitle, onCreate, onClose }: Props) => {
         <div ref={formRef} className="relative w-full mb-4">
             <Textarea
                 className="w-full border border-gray-400 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500 resize-none p-2 rounded text-sm mb-2"
-                rows={4}
+                rows={5}
                 placeholder="What needs to be done?"
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
